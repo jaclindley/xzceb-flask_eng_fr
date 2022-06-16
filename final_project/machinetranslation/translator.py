@@ -23,12 +23,12 @@ def english_to_french(english_text):
     Translate text from English to French
     """
     if english_text is None:
-        return None    
-    else:
-        french_translation = language_translator.translate(text=english_text,model_id='en-fr')
-        french_res = french_translation.get_result()
-        french_text = french_res['translations'][0]['translation']
-        return french_text
+        return None
+    french_translation = language_translator.translate(
+        text=english_text,model_id='en-fr')
+    french_res = french_translation.get_result()
+    french_text = french_res['translations'][0]['translation']
+    return french_text
 
 
 def french_to_english(french_text):
@@ -37,8 +37,8 @@ def french_to_english(french_text):
     """
     if french_text is None:
         return None
-    else:
-        english_translation = language_translator.translate(text=french_text,model_id='fr-en')
-        english_res = english_translation.get_result()
-        english_text = english_res['translations'][0]['translation']
-        return english_text
+    english_translation = language_translator.translate(
+        text=french_text,model_id='fr-en')
+    english_res = english_translation.get_result()
+    english_text = english_res['translations'][0]['translation']
+    return english_text
